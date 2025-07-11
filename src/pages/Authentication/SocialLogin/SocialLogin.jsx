@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
-// import useAxios from '../../../hooks/useAxios';
-//import axios from 'axios';
 import { AuthContext } from '../../../provider/Authprovider';
+import useAxios from '../../../hooks/useAxios';
 
 const SocialLogin = () => {
   const { signInWithGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const axiosInstance = useAxios();
   const from = location.state?.from || '/';
 
   const handleGoogleSignIn = async () => {
@@ -26,7 +26,7 @@ const SocialLogin = () => {
       };
 
       // If backend ready, enable this:
-      // await axios.post(`${import.meta.env.VITE_API_BASE_URL}/users`, userInfo);
+      await axiosInstance.post('/users', userInfo);
 
       Swal.fire({
         icon: 'success',

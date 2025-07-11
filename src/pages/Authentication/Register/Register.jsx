@@ -5,14 +5,14 @@ import SocialLogin from '../socialLogin/SocialLogin';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../provider/Authprovider';
-//import useAxios from '../../../hooks/useAxios';
+import useAxios from '../../../hooks/useAxios';
 
 const Register = () => {
   const { register, handleSubmit, formState: { errors }, reset, setError } = useForm();
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  //const axiosInstance = useAxios();
+  const axiosInstance = useAxios();
   const from = location.state?.from || '/';
   const [profilePic, setProfilePic] = useState('');
   const [passwordValidationError, setPasswordValidationError] = useState("");
@@ -49,7 +49,7 @@ const Register = () => {
         created_at: new Date().toISOString(),
         last_log_in: new Date().toISOString()
       };
-     // await axiosInstance.post('/users', userInfo);
+      await axiosInstance.post('/users', userInfo);
 
       const userProfile = {
         displayName: data.name,
