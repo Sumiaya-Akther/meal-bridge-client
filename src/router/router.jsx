@@ -12,6 +12,8 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import DashboardLayout from "../layOut/DashBoardLayout";
 import AddDonation from "../pages/Dashboard/Restaurant/AddDonations/AddDonation";
 import ManageDonations from "../pages/Dashboard/Admin/ManageDonation/ManageDonations";
+import MyDonations from "../pages/Dashboard/Restaurant/MyDonations/MyDonations";
+import UpdateDonation from "../pages/Dashboard/Restaurant/MyDonations/UpdateDonation";
 
 export const router = createBrowserRouter([
     {
@@ -68,6 +70,14 @@ export const router = createBrowserRouter([
             {
                 path:'manage-donations',
                 Component:ManageDonations
+            },
+            {
+                path:'my-donations',
+                Component:MyDonations
+            },
+            {
+                path:'update-donation/:id',
+                Component:UpdateDonation
             }
         ]
     }
