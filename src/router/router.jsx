@@ -6,6 +6,10 @@ import Login from "../pages/Authentication/Login/Login";
 import Register from "../pages/Authentication/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ForbiddenPage from "../pages/ErrorPage/ForbiddenPage/ForbiddenPage";
+import PrivateRoute from "./PrivateRoute";
+import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import DashboardLayout from "../layOut/DashBoardLayout";
 
 export const router = createBrowserRouter([
     {
@@ -41,4 +45,20 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute>
+            <DashboardLayout></DashboardLayout>
+        </PrivateRoute>,
+        children: [
+            {
+                path: 'profile',
+                Component: MyProfile
+            },
+            {
+                path: 'manage-users',
+                Component:ManageUsers
+            }
+        ]
+    }
 ]);
