@@ -11,6 +11,7 @@ import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import DashboardLayout from "../layOut/DashBoardLayout";
 import AddDonation from "../pages/Dashboard/Restaurant/AddDonations/AddDonation";
+import ManageDonations from "../pages/Dashboard/Admin/ManageDonation/ManageDonations";
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
             {
                 path: 'add-donation',
                 Component: AddDonation
+            },
+            {
+                path:'manage-donations',
+                Component:ManageDonations
             }
         ]
     }
