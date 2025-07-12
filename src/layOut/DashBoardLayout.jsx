@@ -54,6 +54,11 @@ const DashboardLayout = () => {
                             <FaUserShield className="mr-2" /> Manage Users
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/dashboard/add-donation">
+                            <FaPlus className="mr-2" /> Add Donation
+                        </NavLink>
+                    </li>
 
 
                     {/* === USER ROUTES === */}

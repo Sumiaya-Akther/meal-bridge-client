@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import DashboardLayout from "../layOut/DashBoardLayout";
+import AddDonation from "../pages/Dashboard/Restaurant/AddDonations/AddDonation";
 
 export const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
             {
                 path: 'manage-users',
                 Component:ManageUsers
+            },
+            {
+                path: 'add-donation',
+                Component: AddDonation
             }
         ]
     }
