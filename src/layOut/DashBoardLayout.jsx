@@ -69,6 +69,11 @@ const DashboardLayout = () => {
                             <FaBoxOpen className="mr-2" /> My Donations
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/dashboard/feature-donations">
+                            <FaListAlt className="mr-2" /> Feature Donations
+                        </NavLink>
+                    </li>
 
 
                     {/* === USER ROUTES === */}

@@ -52,19 +52,22 @@ const MyDonations = () => {
                             className="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110"
                         />
                     </figure>
-                    <div className="card-body">
-                        <h2 className="card-title text-primary">{donation.title}</h2>
+                    <div className="card-body px-2 py-3">
+                        <div className='flex justify-between gap-6'>
+                            <h2 className="card-title text-primary">{donation.title}</h2>
+                            <p>
+                                <span className={`ml-2 badge ${donation.status === 'Pending' ? 'badge-warning' :
+                                    donation.status === 'Verified' ? 'badge-success' :
+                                        'badge-error'
+                                    }`}>
+                                    {donation.status}
+                                </span>
+                            </p>
+                        </div>
                         <p>Type: {donation.foodType}</p>
                         <p>Quantity: {donation.quantity}</p>
                         <p>Restaurant: {donation.restaurantName}</p>
-                        <p>Status:
-                            <span className={`ml-2 badge ${donation.status === 'Pending' ? 'badge-warning' :
-                                    donation.status === 'Verified' ? 'badge-success' :
-                                        'badge-error'
-                                }`}>
-                                {donation.status}
-                            </span>
-                        </p>
+
                         <div className="mt-4 flex justify-between items-center">
                             {donation.status !== 'Rejected' && (
                                 <button
