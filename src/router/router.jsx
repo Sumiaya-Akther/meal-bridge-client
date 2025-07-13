@@ -17,6 +17,7 @@ import UpdateDonation from "../pages/Dashboard/Restaurant/MyDonations/UpdateDona
 import FeatureDonations from "../pages/Dashboard/Admin/FeatureDonation/FeatureDonations";
 import RequestCharity from "../pages/Dashboard/User/RequestCharity/RequestCharity";
 import Payment from "../pages/Dashboard/User/RequestCharity/Payment/Payment";
+import ManageRoleRequests from "../pages/Dashboard/Admin/ManageRole/ManageRoleRequests";
 
 export const router = createBrowserRouter([
     {
@@ -89,6 +90,10 @@ export const router = createBrowserRouter([
             {
                 path:'request-charity',
                 Component:Payment
+            },
+            {
+                path:'manage-role-requests',
+                Component:ManageRoleRequests
             }
         ]
     }

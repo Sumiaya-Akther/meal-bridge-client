@@ -8,7 +8,7 @@ const DashboardLayout = () => {
   //const { role, roleLoading } = useUserRole();
 
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer lg:drawer-open w-11/12 mx-auto">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar for mobile */}
@@ -78,6 +78,11 @@ const DashboardLayout = () => {
           <li>
             <NavLink to="/dashboard/request-charity">
               <FaDonate className="mr-2" /> Request Charity Role
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/manage-role-requests">
+              <FaUserCheck className="mr-2" /> Manage Role Requests
             </NavLink>
           </li>
 
