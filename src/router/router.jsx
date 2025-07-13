@@ -15,6 +15,8 @@ import ManageDonations from "../pages/Dashboard/Admin/ManageDonation/ManageDonat
 import MyDonations from "../pages/Dashboard/Restaurant/MyDonations/MyDonations";
 import UpdateDonation from "../pages/Dashboard/Restaurant/MyDonations/UpdateDonation";
 import FeatureDonations from "../pages/Dashboard/Admin/FeatureDonation/FeatureDonations";
+import RequestCharity from "../pages/Dashboard/User/RequestCharity/RequestCharity";
+import Payment from "../pages/Dashboard/User/RequestCharity/Payment/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -83,6 +85,10 @@ export const router = createBrowserRouter([
             {
                 path:'feature-donations',
                 Component:FeatureDonations
+            },
+            {
+                path:'request-charity',
+                Component:Payment
             }
         ]
     }
