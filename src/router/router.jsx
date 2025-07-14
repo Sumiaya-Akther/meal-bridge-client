@@ -19,6 +19,8 @@ import RequestCharity from "../pages/Dashboard/User/RequestCharity/RequestCharit
 import Payment from "../pages/Dashboard/User/RequestCharity/Payment/Payment";
 import ManageRoleRequests from "../pages/Dashboard/Admin/ManageRole/ManageRoleRequests";
 import TransactionHistory from "../pages/Dashboard/User/TransactionHistory/TransactionHistory";
+import AllDonations from "../pages/AllDonations/AllDonations";
+import DonationDetails from "../pages/DonationDetails/DonationDetails";
 
 export const router = createBrowserRouter([
     {
@@ -33,6 +35,18 @@ export const router = createBrowserRouter([
             {
                 path: 'forbidden',
                 Component: ForbiddenPage
+            },
+            {
+                path:'allDonations',
+                element:<PrivateRoute>
+                    <AllDonations></AllDonations>
+                </PrivateRoute>
+            },
+            {
+                path:'donations/:id',
+                element:<PrivateRoute>
+                    <DonationDetails></DonationDetails>
+                </PrivateRoute>
             }
         ]
     },
