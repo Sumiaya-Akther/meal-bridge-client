@@ -19,7 +19,7 @@ const AllDonations = () => {
         },
     });
 
-    if (isLoading) return <div className="text-center text-lg font-semibold">Loading donations...</div>;
+    if (isLoading) return <span className="loading loading-spinner text-center text-primary"></span>;
 
     return (
         <div className="px-4 py-8 max-w-7xl mx-auto">
@@ -61,8 +61,8 @@ const AllDonations = () => {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {donations.map((donation) => (
                     <div key={donation._id} className="card bg-base-100 shadow-xl border">
-                        <figure>
-                            <img src={donation.image} alt={donation.title} className="w-full h-48 object-cover" />
+                        <figure className='overflow-hidden'>
+                            <img src={donation.image} alt={donation.title} className="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
                         </figure>
                         <div className="card-body">
                             <div className='flex justify-between gap-5'>

@@ -110,6 +110,16 @@ const DashboardLayout = () => {
               <FaBoxOpen className="mr-2" /> Received Donations
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/dashboard/favorites">
+              <FaHeart className="mr-2" /> Favorites
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/reviews">
+              <FaHeart className="mr-2" /> My Reviews
+            </NavLink>
+          </li>
 
 
           {/* === USER ROUTES === */}
@@ -129,6 +139,11 @@ const DashboardLayout = () => {
               <li>
                 <NavLink to="/dashboard/favorites">
                   <FaHeart className="mr-2" /> Favorites
+                </NavLink>
+              </li>
+                            <li>
+                <NavLink to="/dashboard/reviews">
+                  <FaHeart className="mr-2" /> My Reviews
                 </NavLink>
               </li>
               <li>

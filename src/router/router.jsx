@@ -25,6 +25,8 @@ import RequestedDonations from "../pages/Dashboard/Restaurant/RequestDonetion/Re
 import MyRequests from "../pages/Dashboard/Charity/MyReques/MyRequests";
 import MyPickups from "../pages/Dashboard/Charity/MyPickup/MyPickups";
 import ReceivedDonations from "../pages/Dashboard/Charity/ReceiveDonations/ReceivedDonations";
+import Favorites from "../pages/Dashboard/User/Favorites/Favorites";
+import MyReviews from "../pages/Dashboard/User/MyReview/MyReviews";
 
 export const router = createBrowserRouter([
     {
@@ -134,6 +136,14 @@ export const router = createBrowserRouter([
             {
                 path:'received',
                 Component:ReceivedDonations
+            },
+            {
+                path:'favorites',
+                Component:Favorites
+            },
+            {
+                path:'reviews',
+                Component:MyReviews
             }
         ]
     }

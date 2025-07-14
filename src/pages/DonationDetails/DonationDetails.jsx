@@ -57,6 +57,8 @@ const DonationDetails = () => {
         userEmail: user?.email,
         title: donation.title,
         image: donation.image,
+        location: donation.location,
+        quantity:donation.quantity,
         restaurant: donation.restaurantName,
       }),
     onSuccess: () => Swal.fire("Saved!", "Added to favorites", "success"),
@@ -98,7 +100,10 @@ const DonationDetails = () => {
   const reviewMutation = useMutation({
     mutationFn: () =>
       axiosSecure.post(`/donations/${id}/reviews`, {
+        restaurantName:donation.restaurantName,
+        donationTitle: donation.title,
         reviewer: user?.displayName,
+        reviewerEmail: user?.email,
         reviewText,
         rating: parseInt(rating),
       }),
