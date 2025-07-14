@@ -21,6 +21,7 @@ import ManageRoleRequests from "../pages/Dashboard/Admin/ManageRole/ManageRoleRe
 import TransactionHistory from "../pages/Dashboard/User/TransactionHistory/TransactionHistory";
 import AllDonations from "../pages/AllDonations/AllDonations";
 import DonationDetails from "../pages/DonationDetails/DonationDetails";
+import RequestedDonations from "../pages/Dashboard/Restaurant/RequestDonetion/RequestedDonations";
 
 export const router = createBrowserRouter([
     {
@@ -37,17 +38,18 @@ export const router = createBrowserRouter([
                 Component: ForbiddenPage
             },
             {
-                path:'allDonations',
-                element:<PrivateRoute>
+                path: 'allDonations',
+                element: <PrivateRoute>
                     <AllDonations></AllDonations>
                 </PrivateRoute>
             },
             {
-                path:'donations/:id',
-                element:<PrivateRoute>
+                path: 'donations/:id',
+                element: <PrivateRoute>
                     <DonationDetails></DonationDetails>
                 </PrivateRoute>
             }
+
         ]
     },
     {
@@ -80,39 +82,43 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manage-users',
-                Component:ManageUsers
+                Component: ManageUsers
             },
             {
                 path: 'add-donation',
                 Component: AddDonation
             },
             {
-                path:'manage-donations',
-                Component:ManageDonations
+                path: 'manage-donations',
+                Component: ManageDonations
             },
             {
-                path:'my-donations',
-                Component:MyDonations
+                path: 'my-donations',
+                Component: MyDonations
             },
             {
-                path:'update-donation/:id',
-                Component:UpdateDonation
+                path: 'update-donation/:id',
+                Component: UpdateDonation
             },
             {
-                path:'feature-donations',
-                Component:FeatureDonations
+                path: 'feature-donations',
+                Component: FeatureDonations
             },
             {
-                path:'request-charity',
-                Component:Payment
+                path: 'request-charity',
+                Component: Payment
             },
             {
-                path:'manage-role-requests',
-                Component:ManageRoleRequests
+                path: 'manage-role-requests',
+                Component: ManageRoleRequests
             },
             {
-                path:'transaction-history',
-                Component:TransactionHistory
+                path: 'transaction-history',
+                Component: TransactionHistory
+            },
+            {
+                path: 'requested-donations',
+                Component: RequestedDonations
             }
         ]
     }

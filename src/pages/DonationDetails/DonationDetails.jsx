@@ -109,7 +109,7 @@ const DonationDetails = () => {
     },
   });
 
-  if (isLoading) return <p className="text-center">Loading...</p>;
+  if (isLoading) return <span className="loading loading-spinner text-center text-primary"></span>;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
@@ -118,12 +118,23 @@ const DonationDetails = () => {
           <img src={donation.image} alt={donation.title} className="w-full max-h-[400px] object-cover" />
         </figure>
         <div className="card-body">
-          <h2 className="text-3xl font-bold text-primary">{donation.title}</h2>
+          <div className='flex justify-between gap-5'>
+            <h2 className="card-title text-primary">{donation.title}</h2>
+            <p>
+              <span className=""></span>
+              <span className={
+                donation.donationStatus === 'Available' ? 'badge badge-success' :
+                  donation.donationStatus === 'Requested' ? 'badge badge-warning' :
+                    donation.donationStatus === 'Picked Up' ? 'badge badge-info' : 'text-gray-500'
+              }>
+                {donation.donationStatus}
+              </span>
+            </p>
+          </div>
           <p><strong>Food Type:</strong> {donation.foodType}</p>
           <p><strong>Quantity:</strong> {donation.quantity}</p>
           <p><strong>Pickup Time:</strong> {donation.pickupTime}</p>
           <p><strong>Location:</strong> {donation.location}</p>
-          <p><strong>Status:</strong> {donation.donationStatus}</p>
           <p><strong>Restaurant:</strong> {donation.restaurantName}</p>
 
           <div className="mt-4 flex flex-wrap gap-4">
@@ -133,7 +144,7 @@ const DonationDetails = () => {
               </button>
             )}
 
-            {userRole === "charity"&& (
+            {userRole === "charity" && (
               <button className="btn bg-primary text-white" onClick={() => setShowRequestModal(true)}>
                 Request Donation
               </button>

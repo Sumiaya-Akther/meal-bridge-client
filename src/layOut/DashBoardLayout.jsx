@@ -90,6 +90,11 @@ const DashboardLayout = () => {
               <FaMoneyCheckAlt className="mr-2" /> Transaction History
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/dashboard/requested-donations">
+              <FaClipboardList className="mr-2" /> Requested Donations
+            </NavLink>
+          </li>
 
 
           {/* === USER ROUTES === */}

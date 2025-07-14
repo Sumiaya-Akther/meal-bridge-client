@@ -18,7 +18,7 @@ const MyProfile = () => {
     },
   });
 
-  if (isLoading) return <span className="loading loading-spinner text-primary"></span>;
+  if (isLoading) return <span className="loading loading-spinner text-center text-primary"></span>;
 
   return (
     <div className="max-w-md mx-auto bg-base-200 p-6 rounded-xl shadow-lg mt-8 text-center">
