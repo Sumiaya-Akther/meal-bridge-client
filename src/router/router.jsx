@@ -22,6 +22,7 @@ import TransactionHistory from "../pages/Dashboard/User/TransactionHistory/Trans
 import AllDonations from "../pages/AllDonations/AllDonations";
 import DonationDetails from "../pages/DonationDetails/DonationDetails";
 import RequestedDonations from "../pages/Dashboard/Restaurant/RequestDonetion/RequestedDonations";
+import MyRequests from "../pages/Dashboard/Charity/MyReques/MyRequests";
 
 export const router = createBrowserRouter([
     {
@@ -119,6 +120,10 @@ export const router = createBrowserRouter([
             {
                 path: 'requested-donations',
                 Component: RequestedDonations
+            },
+            {
+                path:'my-requests',
+                Component:MyRequests
             }
         ]
     }

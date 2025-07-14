@@ -95,6 +95,11 @@ const DashboardLayout = () => {
               <FaClipboardList className="mr-2" /> Requested Donations
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/dashboard/my-requests">
+              <FaClipboardList className="mr-2" /> My Requests
+            </NavLink>
+          </li>
 
 
           {/* === USER ROUTES === */}
