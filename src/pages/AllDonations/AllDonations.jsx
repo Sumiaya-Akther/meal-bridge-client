@@ -73,7 +73,7 @@ const AllDonations = () => {
                                         donation.donationStatus === 'Pending' ? 'badge badge-success' :
                                         donation.donationStatus === 'Available' ? 'badge badge-success' :
                                         donation.donationStatus === 'Requested' ? 'badge badge-warning' :
-                                        donation.donationStatus === 'Picked Up' ? 'badge badge-info' : 'text-gray-500'
+                                        donation.donationStatus === 'Picked Up' ? 'badge badge-primary' : 'text-gray-500'
                                     }>
                                         {donation.donationStatus}
                                     </span>

@@ -100,6 +100,11 @@ const DashboardLayout = () => {
               <FaClipboardList className="mr-2" /> My Requests
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/dashboard/my-pickups">
+              <FaBoxOpen className="mr-2" /> My Pickups
+            </NavLink>
+          </li>
 
 
           {/* === USER ROUTES === */}
@@ -141,6 +146,11 @@ const DashboardLayout = () => {
               <li>
                 <NavLink to="/dashboard/my-requests">
                   <FaClipboardList className="mr-2" /> My Requests
+                </NavLink>
+              </li>
+                            <li>
+                <NavLink to="/dashboard/my-pickups">
+                  <FaBoxOpen className="mr-2" /> My Pickups
                 </NavLink>
               </li>
               <li>
