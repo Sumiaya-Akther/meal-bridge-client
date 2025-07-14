@@ -85,6 +85,11 @@ const DashboardLayout = () => {
               <FaUserCheck className="mr-2" /> Manage Role Requests
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/dashboard/transaction-history">
+              <FaMoneyCheckAlt className="mr-2" /> Transaction History
+            </NavLink>
+          </li>
 
 
           {/* === USER ROUTES === */}

@@ -18,6 +18,7 @@ import FeatureDonations from "../pages/Dashboard/Admin/FeatureDonation/FeatureDo
 import RequestCharity from "../pages/Dashboard/User/RequestCharity/RequestCharity";
 import Payment from "../pages/Dashboard/User/RequestCharity/Payment/Payment";
 import ManageRoleRequests from "../pages/Dashboard/Admin/ManageRole/ManageRoleRequests";
+import TransactionHistory from "../pages/Dashboard/User/TransactionHistory/TransactionHistory";
 
 export const router = createBrowserRouter([
     {
@@ -94,6 +95,10 @@ export const router = createBrowserRouter([
             {
                 path:'manage-role-requests',
                 Component:ManageRoleRequests
+            },
+            {
+                path:'transaction-history',
+                Component:TransactionHistory
             }
         ]
     }
