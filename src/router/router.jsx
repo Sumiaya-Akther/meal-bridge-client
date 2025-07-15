@@ -27,6 +27,7 @@ import MyPickups from "../pages/Dashboard/Charity/MyPickup/MyPickups";
 import ReceivedDonations from "../pages/Dashboard/Charity/ReceiveDonations/ReceivedDonations";
 import Favorites from "../pages/Dashboard/User/Favorites/Favorites";
 import MyReviews from "../pages/Dashboard/User/MyReview/MyReviews";
+import ManageRequests from "../pages/Dashboard/Admin/ManageRequest/ManageRequests";
 
 export const router = createBrowserRouter([
     {
@@ -144,6 +145,10 @@ export const router = createBrowserRouter([
             {
                 path:'reviews',
                 Component:MyReviews
+            },
+            {
+                path:'manage-requests',
+                Component:ManageRequests
             }
         ]
     }

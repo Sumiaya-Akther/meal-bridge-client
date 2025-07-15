@@ -121,6 +121,11 @@ const DashboardLayout = () => {
             </NavLink>
           </li>
 
+          <li>
+            <NavLink to="/dashboard/manage-requests">
+              <FaClipboardList className="mr-2" /> Manage Food Requests
+            </NavLink>
+          </li>
 
           {/* === USER ROUTES === */}
 

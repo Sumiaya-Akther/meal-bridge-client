@@ -55,7 +55,7 @@ const AddDonation = () => {
           restaurantName: user.displayName,
           restaurantEmail: user.email,
           status: 'Pending',
-          donationStatus: 'Pending',
+          donationStatus: 'Available',
           created_at: new Date(),
         };
 
