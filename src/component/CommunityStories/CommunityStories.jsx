@@ -30,10 +30,11 @@ const CommunityStories = () => {
   ];
 
   return (
-    <div className="my-20 px-4 max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
+    <div className="mt-20 mb-30 px-4 max-w-7xl mx-auto">
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-3">
         💬 Community Stories
       </h2>
+      <p className=' text-center mb-12'>Real voices, real impact — heartfelt stories from restaurants and charities in action.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {stories.map((item, index) => (
           <div key={index} className="bg-base-100 shadow rounded-2xl p-6 flex gap-6">

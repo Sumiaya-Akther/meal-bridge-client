@@ -15,7 +15,7 @@ const Banner = () => {
       stopOnHover={true}
     >
       {/* Slide 1 */}
-      <div className="relative">
+      <div className="relative lg:w-7xl lg:mx-auto">
         <img
           className="w-full h-[570px] object-cover rounded-2xl"
           src="https://i.ibb.co/RTYJ71sT/banner-4.jpg"
