@@ -86,69 +86,84 @@ export const router = createBrowserRouter([
                 path: 'profile',
                 Component: MyProfile
             },
+            //user dashboard
             {
-                path: 'manage-users',
-                Component: ManageUsers
+                path: 'request-charity',
+                Component: Payment
             },
+            {
+                path: 'favorites',
+                Component: Favorites
+            },
+            {
+                path: 'reviews',
+                Component: MyReviews
+            },
+            {
+                path: 'transaction-history',
+                Component: TransactionHistory
+            },
+
+            //restaurant dashboard
+
             {
                 path: 'add-donation',
                 Component: AddDonation
-            },
-            {
-                path: 'manage-donations',
-                Component: ManageDonations
-            },
-            {
-                path: 'my-donations',
-                Component: MyDonations
             },
             {
                 path: 'update-donation/:id',
                 Component: UpdateDonation
             },
             {
-                path: 'feature-donations',
-                Component: FeatureDonations
+                path: 'my-donations',
+                Component: MyDonations
             },
             {
-                path: 'request-charity',
-                Component: Payment
+                path: 'requested-donations',
+                Component: RequestedDonations
+            },
+
+            //charity dashboard
+
+            {
+                path: 'my-requests',
+                Component: MyRequests
+            },
+            {
+                path: 'my-pickups',
+                Component: MyPickups
+            },
+            {
+                path: 'received',
+                Component: ReceivedDonations
+            },
+            {
+                path: 'transaction-history',
+                Component: TransactionHistory
+            },
+
+            //admin dashboard
+
+            {
+                path: 'manage-users',
+                Component: ManageUsers
+            },
+
+            {
+                path: 'manage-donations',
+                Component: ManageDonations
+            },
+            {
+                path: 'feature-donations',
+                Component: FeatureDonations
             },
             {
                 path: 'manage-role-requests',
                 Component: ManageRoleRequests
             },
             {
-                path: 'transaction-history',
-                Component: TransactionHistory
-            },
-            {
-                path: 'requested-donations',
-                Component: RequestedDonations
-            },
-            {
-                path:'my-requests',
-                Component:MyRequests
-            },
-            {
-                path:'my-pickups',
-                Component:MyPickups
-            },
-            {
-                path:'received',
-                Component:ReceivedDonations
-            },
-            {
-                path:'favorites',
-                Component:Favorites
-            },
-            {
-                path:'reviews',
-                Component:MyReviews
-            },
-            {
-                path:'manage-requests',
-                Component:ManageRequests
+                path: 'manage-requests',
+                Component: ManageRequests
             }
         ]
     }
