@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router';
-import { FaHome, FaBoxOpen, FaMoneyCheckAlt, FaUserEdit, FaSearchLocation, FaUserCheck, FaUserClock, FaUserShield, FaMotorcycle, FaHeart, FaDonate, FaPlus, FaClipboardList, FaListAlt } from 'react-icons/fa';
-//import useUserRole from '../hooks/useUserRole';
+import { FaHome, FaBoxOpen, FaMoneyCheckAlt, FaUserEdit, FaUserCheck, FaUserShield, FaHeart, FaDonate, FaPlus, FaClipboardList, FaListAlt } from 'react-icons/fa';
+import { MdRateReview } from "react-icons/md";
+import useUserRole from '../hooks/useUserRole';
 import { Link } from 'react-router';
 
 const DashboardLayout = () => {
-  //const { role, roleLoading } = useUserRole();
+  const { role, roleLoading } = useUserRole();
 
   return (
     <div className="drawer lg:drawer-open w-11/12 mx-auto">
@@ -49,7 +50,9 @@ const DashboardLayout = () => {
               <FaUserEdit className="mr-2" /> My Profile
             </NavLink>
           </li>
-          <li>
+          {/* -------------------------------------------------------> */}
+
+          {/* <li>
             <NavLink to="/dashboard/manage-users">
               <FaUserShield className="mr-2" /> Manage Users
             </NavLink>
@@ -125,17 +128,16 @@ const DashboardLayout = () => {
             <NavLink to="/dashboard/manage-requests">
               <FaClipboardList className="mr-2" /> Manage Food Requests
             </NavLink>
-          </li>
+          </li> */}
+
+          {/* ----------------------------------------------------------------------------- */}
+
+
 
           {/* === USER ROUTES === */}
 
-          {/* {!roleLoading && role === 'user' && (
+          {!roleLoading && role === 'user' && (
             <>
-              <li>
-                <NavLink to="/dashboard/profile">
-                  <FaUserEdit className="mr-2" /> My Profile
-                </NavLink>
-              </li>
               <li>
                 <NavLink to="/dashboard/request-charity">
                   <FaDonate className="mr-2" /> Request Charity Role
@@ -146,9 +148,9 @@ const DashboardLayout = () => {
                   <FaHeart className="mr-2" /> Favorites
                 </NavLink>
               </li>
-                            <li>
+              <li>
                 <NavLink to="/dashboard/reviews">
-                  <FaHeart className="mr-2" /> My Reviews
+                  <MdRateReview className="mr-2" /> My Reviews
                 </NavLink>
               </li>
               <li>
@@ -157,23 +159,18 @@ const DashboardLayout = () => {
                 </NavLink>
               </li>
             </>
-          )} */}
+          )}
 
           {/* === CHARITY ROUTES === */}
 
-          {/* {!roleLoading && role === 'charity' && (
+          {!roleLoading && role === 'charity' && (
             <>
-              <li>
-                <NavLink to="/dashboard/profile">
-                  <FaUserEdit className="mr-2" /> Charity Profile
-                </NavLink>
-              </li>
               <li>
                 <NavLink to="/dashboard/my-requests">
                   <FaClipboardList className="mr-2" /> My Requests
                 </NavLink>
               </li>
-                            <li>
+              <li>
                 <NavLink to="/dashboard/my-pickups">
                   <FaBoxOpen className="mr-2" /> My Pickups
                 </NavLink>
@@ -189,18 +186,13 @@ const DashboardLayout = () => {
                 </NavLink>
               </li>
             </>
-          )} */}
+          )}
 
 
           {/* === RESTAURANT ROUTES === */}
 
-          {/* {!roleLoading && role === 'restaurant' && (
+          {!roleLoading && role === 'restaurant' && (
             <>
-              <li>
-                <NavLink to="/dashboard/profile">
-                  <FaUserEdit className="mr-2" /> Restaurant Profile
-                </NavLink>
-              </li>
               <li>
                 <NavLink to="/dashboard/add-donation">
                   <FaPlus className="mr-2" /> Add Donation
@@ -217,19 +209,12 @@ const DashboardLayout = () => {
                 </NavLink>
               </li>
             </>
-          )} */}
-
-
+          )}
 
           {/* === ADMIN ROUTES === */}
 
-          {/* {!roleLoading && role === 'admin' && (
+          {!roleLoading && role === 'admin' && (
             <>
-              <li>
-                <NavLink to="/dashboard/profile">
-                  <FaUserEdit className="mr-2" /> Admin Profile
-                </NavLink>
-              </li>
               <li>
                 <NavLink to="/dashboard/manage-users">
                   <FaUserShield className="mr-2" /> Manage Users
@@ -256,9 +241,7 @@ const DashboardLayout = () => {
                 </NavLink>
               </li>
             </>
-          )} */}
-
-
+          )}
         </ul>
       </div>
     </div>

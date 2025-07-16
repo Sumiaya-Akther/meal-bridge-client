@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 
-
 const ManageRequests = () => {
   const axiosSecure = useAxiosSecure();
   const queryClient = useQueryClient();
@@ -19,7 +18,6 @@ const ManageRequests = () => {
   });
 
   
-
   // Delete mutation
   const deleteMutation = useMutation({
     mutationFn: async (id) => {

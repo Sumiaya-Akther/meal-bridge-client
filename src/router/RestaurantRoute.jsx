@@ -4,6 +4,7 @@ import { AuthContext } from '../provider/Authprovider';
 import useUserRole from '../hooks/useUserRole';
 
 
+
 const RestaurantRoute = ({ children }) => {
 
     const { user, loading } = useContext(AuthContext);
@@ -15,7 +16,7 @@ const RestaurantRoute = ({ children }) => {
         return <span className="loading loading-spinner loading-xl"></span>
     }
 
-    if (!user || role !== 'admin') {
+    if (!user || role !== 'restaurant') {
         return <Navigate state={{ from: location.pathname }} to="/forbidden"></Navigate>
     }
 
