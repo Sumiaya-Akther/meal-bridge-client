@@ -27,28 +27,51 @@ const MyReviews = () => {
     },
   });
 
-  if (isLoading) return <span className="loading loading-spinner text-center text-primary"></span>;
+  if (isLoading)
+    return (
+      <span className="loading loading-spinner text-center text-primary mx-auto block"></span>
+    );
 
   return (
-    <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {reviews.map((review) => (
-        <div key={review._id} className="card shadow border border-primary/10 bg-base-100">
-          <div className="card-body">
-            <h2 className="text-lg font-bold text-primary">{review.donationTitle}</h2>
-            <p><strong>Restaurant:</strong> {review.restaurantName}</p>
-            <p><strong>Time:</strong> {moment(review.createdAt).format("MMMM D, YYYY h:mm A")}</p>
-            <p><strong>Description:</strong> {review.reviewText}</p>
-            <div className="text-right mt-4">
-              <button
-                onClick={() => deleteReviewMutation.mutate(review._id)}
-                className="btn btn-outline btn-error btn-sm"
-              >
-                Delete
-              </button>
+    <div className="p-6">
+      {reviews.length === 0 ? (
+        <p className="text-center text-gray-500 text-lg">
+          No reviews added yet.
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {reviews.map((review) => (
+            <div
+              key={review._id}
+              className="card shadow border border-primary/10 bg-base-100"
+            >
+              <div className="card-body">
+                <h2 className="text-lg font-bold text-primary">
+                  {review.donationTitle}
+                </h2>
+                <p>
+                  <strong>Restaurant:</strong> {review.restaurantName}
+                </p>
+                <p>
+                  <strong>Time:</strong>{" "}
+                  {moment(review.createdAt).format("MMMM D, YYYY h:mm A")}
+                </p>
+                <p>
+                  <strong>Description:</strong> {review.reviewText}
+                </p>
+                <div className="text-right mt-4">
+                  <button
+                    onClick={() => deleteReviewMutation.mutate(review._id)}
+                    className="btn btn-outline btn-error btn-sm"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 };

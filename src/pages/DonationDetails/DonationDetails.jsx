@@ -5,7 +5,6 @@ import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { AuthContext } from "../../provider/Authprovider";
 
-
 const DonationDetails = () => {
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
@@ -49,7 +48,6 @@ const DonationDetails = () => {
     },
   });
 
-  // Save to favorites
   const favoriteMutation = useMutation({
     mutationFn: () =>
       axiosSecure.post("/favorites", {
@@ -58,13 +56,12 @@ const DonationDetails = () => {
         title: donation.title,
         image: donation.image,
         location: donation.location,
-        quantity:donation.quantity,
+        quantity: donation.quantity,
         restaurant: donation.restaurantName,
       }),
     onSuccess: () => Swal.fire("Saved!", "Added to favorites", "success"),
   });
 
-  // Request Donation
   const requestMutation = useMutation({
     mutationFn: async () => {
       const payload = {
@@ -87,7 +84,6 @@ const DonationDetails = () => {
     },
   });
 
-  // Confirm Pickup
   const pickupMutation = useMutation({
     mutationFn: () => axiosSecure.patch(`/donations/pickup/${id}`),
     onSuccess: () => {
@@ -96,11 +92,10 @@ const DonationDetails = () => {
     },
   });
 
-  // Add Review
   const reviewMutation = useMutation({
     mutationFn: () =>
       axiosSecure.post(`/donations/${id}/reviews`, {
-        restaurantName:donation.restaurantName,
+        restaurantName: donation.restaurantName,
         donationTitle: donation.title,
         reviewer: user?.displayName,
         reviewerEmail: user?.email,
@@ -114,43 +109,68 @@ const DonationDetails = () => {
     },
   });
 
-  if (isLoading) return <span className="loading loading-spinner text-center text-primary"></span>;
+  if (isLoading)
+    return <span className="loading loading-spinner text-primary mx-auto block"></span>;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
       <div className="card bg-base-100 shadow-xl">
         <figure>
-          <img src={donation.image} alt={donation.title} className="w-full max-h-[400px] object-cover" />
+          <img
+            src={donation.image}
+            alt={donation.title}
+            className="w-full max-h-[400px] object-cover"
+          />
         </figure>
         <div className="card-body">
-          <div className='flex justify-between gap-5'>
+          <div className="flex justify-between gap-5">
             <h2 className="card-title text-primary">{donation.title}</h2>
-            <p>
-              <span className=""></span>
-              <span className={
-                donation.donationStatus === 'Available' ? 'badge badge-success' :
-                  donation.donationStatus === 'Requested' ? 'badge badge-warning' :
-                    donation.donationStatus === 'Picked Up' ? 'badge badge-info' : 'text-gray-500'
-              }>
-                {donation.donationStatus}
-              </span>
-            </p>
+            <span
+              className={
+                donation.donationStatus === "Available"
+                  ? "badge badge-success"
+                  : donation.donationStatus === "Requested"
+                  ? "badge badge-warning"
+                  : donation.donationStatus === "Picked Up"
+                  ? "badge badge-info"
+                  : "text-gray-500"
+              }
+            >
+              {donation.donationStatus}
+            </span>
           </div>
-          <p><strong>Food Type:</strong> {donation.foodType}</p>
-          <p><strong>Quantity:</strong> {donation.quantity}</p>
-          <p><strong>Pickup Time:</strong> {donation.pickupTime}</p>
-          <p><strong>Location:</strong> {donation.location}</p>
-          <p><strong>Restaurant:</strong> {donation.restaurantName}</p>
+          <p>
+            <strong>Food Type:</strong> {donation.foodType}
+          </p>
+          <p>
+            <strong>Quantity:</strong> {donation.quantity}
+          </p>
+          <p>
+            <strong>Pickup Time:</strong> {donation.pickupTime}
+          </p>
+          <p>
+            <strong>Location:</strong> {donation.location}
+          </p>
+          <p>
+            <strong>Restaurant:</strong> {donation.restaurantName}
+          </p>
 
           <div className="mt-4 flex flex-wrap gap-4">
             {(userRole === "user" || userRole === "charity") && (
-              <button className="btn btn-outline btn-info" onClick={() => favoriteMutation.mutate()}>
+              <button
+                className="btn btn-outline btn-info"
+                onClick={() => favoriteMutation.mutate()}
+              >
                 Save to Favorites
               </button>
             )}
 
             {userRole === "charity" && (
-              <button className="btn bg-primary text-white" onClick={() => setShowRequestModal(true)}>
+              <button
+                className="btn btn-primary text-white"
+                disabled={donation.donationStatus === "Picked Up"}
+                onClick={() => setShowRequestModal(true)}
+              >
                 Request Donation
               </button>
             )}
@@ -158,7 +178,10 @@ const DonationDetails = () => {
             {userRole === "charity" &&
               donation.donationStatus === "Requested" &&
               donation.charityEmail === user?.email && (
-                <button className="btn bg-success text-white" onClick={() => pickupMutation.mutate()}>
+                <button
+                  className="btn btn-success text-white"
+                  onClick={() => pickupMutation.mutate()}
+                >
                   Confirm Pickup
                 </button>
               )}
@@ -167,15 +190,18 @@ const DonationDetails = () => {
       </div>
 
       {/* Reviews Section */}
-      <div className="mt-10 bg-white rounded-xl p-5 shadow">
+      <div className="mt-10 bg-base-100 rounded-xl p-5 shadow">
         <h3 className="text-2xl font-semibold mb-4 text-primary">Reviews</h3>
         {reviews.length ? (
           <div className="space-y-3">
             {reviews.map((r, idx) => (
-              <div key={idx} className="border p-3 rounded-md">
+              <div
+                key={idx}
+                className="border border-base-200 p-3 rounded-md"
+              >
                 <p className="font-bold">{r.reviewer}</p>
                 <p>{r.reviewText}</p>
-                <p className="text-sm text-yellow-600">⭐ {r.rating}/5</p>
+                <p className="text-sm text-secondary">⭐ {r.rating}/5</p>
               </div>
             ))}
           </div>
@@ -183,7 +209,10 @@ const DonationDetails = () => {
           <p>No reviews yet.</p>
         )}
         {(userRole === "user" || userRole === "charity") && (
-          <button className="btn mt-4 btn-outline" onClick={() => setShowReviewModal(true)}>
+          <button
+            className="btn mt-4 btn-outline btn-secondary"
+            onClick={() => setShowReviewModal(true)}
+          >
             Add Review
           </button>
         )}
@@ -192,11 +221,19 @@ const DonationDetails = () => {
       {/* Request Modal */}
       {showRequestModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-xl w-[90%] max-w-md">
-            <h2 className="text-xl font-bold mb-4 text-primary">Request Donation</h2>
-            <p><strong>Donation:</strong> {donation.title}</p>
-            <p><strong>Restaurant:</strong> {donation.restaurantName}</p>
-            <p><strong>Charity:</strong> {user.displayName}</p>
+          <div className="bg-base-100 p-6 rounded-xl w-[90%] max-w-md">
+            <h2 className="text-xl font-bold mb-4 text-primary">
+              Request Donation
+            </h2>
+            <p>
+              <strong>Donation:</strong> {donation.title}
+            </p>
+            <p>
+              <strong>Restaurant:</strong> {donation.restaurantName}
+            </p>
+            <p>
+              <strong>Charity:</strong> {user.displayName}
+            </p>
             <textarea
               placeholder="Request Description"
               className="textarea textarea-bordered w-full mt-3"
@@ -211,8 +248,18 @@ const DonationDetails = () => {
               onChange={(e) => setPickupTime(e.target.value)}
             />
             <div className="flex justify-end gap-3 mt-4">
-              <button className="btn btn-outline" onClick={() => setShowRequestModal(false)}>Cancel</button>
-              <button className="btn bg-primary text-white" onClick={() => requestMutation.mutate()}>Submit</button>
+              <button
+                className="btn btn-outline"
+                onClick={() => setShowRequestModal(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary text-white"
+                onClick={() => requestMutation.mutate()}
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>
@@ -221,7 +268,7 @@ const DonationDetails = () => {
       {/* Review Modal */}
       {showReviewModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-xl w-[90%] max-w-md">
+          <div className="bg-base-100 p-6 rounded-xl w-[90%] max-w-md">
             <h2 className="text-xl font-bold mb-4 text-primary">Add Review</h2>
             <textarea
               placeholder="Your review"
@@ -239,8 +286,16 @@ const DonationDetails = () => {
               onChange={(e) => setRating(e.target.value)}
             />
             <div className="flex justify-end gap-3 mt-4">
-              <button className="btn btn-outline" onClick={() => setShowReviewModal(false)}>Cancel</button>
-              <button className="btn bg-success text-white" onClick={() => reviewMutation.mutate()}>
+              <button
+                className="btn btn-outline"
+                onClick={() => setShowReviewModal(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-success text-white"
+                onClick={() => reviewMutation.mutate()}
+              >
                 Submit
               </button>
             </div>
