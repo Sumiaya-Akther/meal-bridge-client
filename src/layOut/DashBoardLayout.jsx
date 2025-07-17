@@ -8,6 +8,10 @@ import { Link } from 'react-router';
 const DashboardLayout = () => {
   const { role, roleLoading } = useUserRole();
 
+  // Active class helper
+  const activeClass = ({ isActive }) =>
+    isActive ? 'bg-primary text-white font-semibold' : '';
+
   return (
     <div className="drawer lg:drawer-open w-11/12 mx-auto">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -40,115 +44,32 @@ const DashboardLayout = () => {
             <Link to="/"><img className='w-22' src="/mealBridge-logo.png" alt="" /></Link>
           </div>
           <li>
-            <NavLink to="/dashboard">
+            <NavLink to="/dashboard" className={activeClass}>
               <FaUserEdit className="mr-2" /> My Profile
             </NavLink>
           </li>
-          {/* -------------------------------------------------------> */}
-
-          {/* <li>
-            <NavLink to="/dashboard/manage-users">
-              <FaUserShield className="mr-2" /> Manage Users
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/add-donation">
-              <FaPlus className="mr-2" /> Add Donation
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/manage-donations">
-              <FaBoxOpen className="mr-2" /> Manage Donations
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/my-donations">
-              <FaBoxOpen className="mr-2" /> My Donations
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/feature-donations">
-              <FaListAlt className="mr-2" /> Feature Donations
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/dashboard/request-charity">
-              <FaDonate className="mr-2" /> Request Charity Role
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/manage-role-requests">
-              <FaUserCheck className="mr-2" /> Manage Role Requests
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/transaction-history">
-              <FaMoneyCheckAlt className="mr-2" /> Transaction History
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/requested-donations">
-              <FaClipboardList className="mr-2" /> Requested Donations
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/my-requests">
-              <FaClipboardList className="mr-2" /> My Requests
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/my-pickups">
-              <FaBoxOpen className="mr-2" /> My Pickups
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/received">
-              <FaBoxOpen className="mr-2" /> Received Donations
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/favorites">
-              <FaHeart className="mr-2" /> Favorites
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/reviews">
-              <FaHeart className="mr-2" /> My Reviews
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/dashboard/manage-requests">
-              <FaClipboardList className="mr-2" /> Manage Food Requests
-            </NavLink>
-          </li> */}
-
-          {/* ----------------------------------------------------------------------------- */}
-
-
 
           {/* === USER ROUTES === */}
 
           {!roleLoading && role === 'user' && (
             <>
               <li>
-                <NavLink to="/dashboard/request-charity">
+                <NavLink to="/dashboard/request-charity" className={activeClass}>
                   <FaDonate className="mr-2" /> Request Charity Role
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/favorites">
+                <NavLink to="/dashboard/favorites" className={activeClass}>
                   <FaHeart className="mr-2" /> Favorites
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/reviews">
+                <NavLink to="/dashboard/reviews" className={activeClass}>
                   <MdRateReview className="mr-2" /> My Reviews
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/transaction-history">
+                <NavLink to="/dashboard/transaction-history" className={activeClass}>
                   <FaMoneyCheckAlt className="mr-2" /> Transaction History
                 </NavLink>
               </li>
@@ -160,22 +81,22 @@ const DashboardLayout = () => {
           {!roleLoading && role === 'charity' && (
             <>
               <li>
-                <NavLink to="/dashboard/my-requests">
+                <NavLink to="/dashboard/my-requests" className={activeClass}>
                   <FaClipboardList className="mr-2" /> My Requests
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/my-pickups">
+                <NavLink to="/dashboard/my-pickups" className={activeClass}>
                   <FaBoxOpen className="mr-2" /> My Pickups
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/received">
+                <NavLink to="/dashboard/received" className={activeClass}>
                   <FaBoxOpen className="mr-2" /> Received Donations
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/transaction-history">
+                <NavLink to="/dashboard/transaction-history" className={activeClass}>
                   <FaMoneyCheckAlt className="mr-2" /> Transaction History
                 </NavLink>
               </li>
@@ -188,22 +109,22 @@ const DashboardLayout = () => {
           {!roleLoading && role === 'restaurant' && (
             <>
               <li>
-                <NavLink to="/dashboard/add-donation">
+                <NavLink to="/dashboard/add-donation" className={activeClass}>
                   <FaPlus className="mr-2" /> Add Donation
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/my-donations">
+                <NavLink to="/dashboard/my-donations" className={activeClass}>
                   <FaBoxOpen className="mr-2" /> My Donations
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/requested-donations">
+                <NavLink to="/dashboard/requested-donations" className={activeClass}>
                   <FaClipboardList className="mr-2" /> Requested Donations
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/donation-stats">
+                <NavLink to="/dashboard/donation-stats" className={activeClass}>
                   <FaClipboardList className="mr-2" />Donations Stats
                 </NavLink>
               </li>
@@ -215,27 +136,27 @@ const DashboardLayout = () => {
           {!roleLoading && role === 'admin' && (
             <>
               <li>
-                <NavLink to="/dashboard/manage-users">
+                <NavLink to="/dashboard/manage-users" className={activeClass}>
                   <FaUserShield className="mr-2" /> Manage Users
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manage-role-requests">
+                <NavLink to="/dashboard/manage-role-requests" className={activeClass}>
                   <FaUserCheck className="mr-2" /> Manage Role Requests
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manage-donations">
+                <NavLink to="/dashboard/manage-donations" className={activeClass}>
                   <FaBoxOpen className="mr-2" /> Manage Donations
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manage-requests">
+                <NavLink to="/dashboard/manage-requests" className={activeClass}>
                   <FaClipboardList className="mr-2" /> Manage Food Requests
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/feature-donations">
+                <NavLink to="/dashboard/feature-donations" className={activeClass}>
                   <FaListAlt className="mr-2" /> Feature Donations
                 </NavLink>
               </li>
