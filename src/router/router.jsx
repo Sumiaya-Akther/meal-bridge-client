@@ -31,6 +31,7 @@ import RestaurantRoute from "./RestaurantRoute";
 import CharityRoute from "./CharityRoute";
 import AdminRoute from "./AdminRoute";
 import FeaturedDonations from "../component/FeaturedDonations/FeaturedDonations";
+import DonationStats from "../pages/Dashboard/Restaurant/DonationStats/DonationStats";
 
 export const router = createBrowserRouter([
     {
@@ -41,10 +42,6 @@ export const router = createBrowserRouter([
                 index: true,
                 path: "/",
                 Component: Home,
-            },
-            {
-                path: 'forbidden',
-                Component: ForbiddenPage
             },
             {
                 path: 'allDonations',
@@ -60,6 +57,10 @@ export const router = createBrowserRouter([
             }
 
         ]
+    },
+    {
+        path: 'forbidden',
+        Component: ForbiddenPage
     },
     {
         path: "*",
@@ -86,7 +87,8 @@ export const router = createBrowserRouter([
         </PrivateRoute>,
         children: [
             {
-                path: 'profile',
+                index: true,
+                path: '/dashboard',
                 Component: MyProfile
             },
             //user dashboard
@@ -118,45 +120,51 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'update-donation/:id',
-                element:<RestaurantRoute>
+                element: <RestaurantRoute>
                     <UpdateDonation></UpdateDonation>
                 </RestaurantRoute>
                 //Component: UpdateDonation
             },
             {
                 path: 'my-donations',
-                element:<RestaurantRoute>
+                element: <RestaurantRoute>
                     <MyDonations></MyDonations>
                 </RestaurantRoute>
                 //Component: MyDonations
             },
             {
                 path: 'requested-donations',
-                element:<RestaurantRoute>
+                element: <RestaurantRoute>
                     <RequestedDonations></RequestedDonations>
                 </RestaurantRoute>
                 //Component: RequestedDonations
+            },
+            {
+                path:'donation-stats',
+                element:<RestaurantRoute>
+                    <DonationStats></DonationStats>
+                </RestaurantRoute>
             },
 
             //charity dashboard
 
             {
                 path: 'my-requests',
-                element:<CharityRoute>
-                  <MyRequests></MyRequests>
+                element: <CharityRoute>
+                    <MyRequests></MyRequests>
                 </CharityRoute>
                 //Component: MyRequests
             },
             {
                 path: 'my-pickups',
-                element:<CharityRoute>
+                element: <CharityRoute>
                     <MyPickups></MyPickups>
                 </CharityRoute>
                 //Component: MyPickups
             },
             {
                 path: 'received',
-                element:<CharityRoute>
+                element: <CharityRoute>
                     <ReceivedDonations></ReceivedDonations>
                 </CharityRoute>
                 //Component: ReceivedDonations
@@ -170,7 +178,7 @@ export const router = createBrowserRouter([
 
             {
                 path: 'manage-users',
-                element:<AdminRoute>
+                element: <AdminRoute>
                     <ManageUsers></ManageUsers>
                 </AdminRoute>
                 //Component: ManageUsers
@@ -178,28 +186,28 @@ export const router = createBrowserRouter([
 
             {
                 path: 'manage-donations',
-                element:<AdminRoute>
+                element: <AdminRoute>
                     <ManageDonations></ManageDonations>
                 </AdminRoute>
                 //Component: ManageDonations
             },
             {
                 path: 'feature-donations',
-                element:<AdminRoute>
+                element: <AdminRoute>
                     <FeatureDonations></FeatureDonations>
                 </AdminRoute>
                 //Component: FeatureDonations
             },
             {
                 path: 'manage-role-requests',
-                element:<AdminRoute>
+                element: <AdminRoute>
                     <ManageRoleRequests></ManageRoleRequests>
                 </AdminRoute>
                 //Component: ManageRoleRequests
             },
             {
                 path: 'manage-requests',
-                element:<AdminRoute>
+                element: <AdminRoute>
                     <ManageRequests></ManageRequests>
                 </AdminRoute>
                 //Component: ManageRequests

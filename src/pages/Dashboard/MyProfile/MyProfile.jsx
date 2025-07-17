@@ -28,7 +28,7 @@ const MyProfile = () => {
         </div>
       </div>
       <h2 className="text-2xl font-bold text-primary mb-2">{user?.displayName || 'Anonymous'}</h2>
-      <p className="text-base text-neutral">{user?.email}</p>
+      <p className="">{user?.email}</p>
 
      
       {userInfo.role && userInfo.role !== 'user' && (

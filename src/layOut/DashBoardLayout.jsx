@@ -39,14 +39,8 @@ const DashboardLayout = () => {
           <div>
             <Link to="/"><img className='w-22' src="/mealBridge-logo.png" alt="" /></Link>
           </div>
-
           <li>
             <NavLink to="/dashboard">
-              <FaHome className="mr-2" /> Dashboard Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/profile">
               <FaUserEdit className="mr-2" /> My Profile
             </NavLink>
           </li>
@@ -206,6 +200,11 @@ const DashboardLayout = () => {
               <li>
                 <NavLink to="/dashboard/requested-donations">
                   <FaClipboardList className="mr-2" /> Requested Donations
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/donation-stats">
+                  <FaClipboardList className="mr-2" />Donations Stats
                 </NavLink>
               </li>
             </>

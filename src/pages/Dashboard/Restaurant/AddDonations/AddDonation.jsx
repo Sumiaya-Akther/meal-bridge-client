@@ -90,8 +90,8 @@ const AddDonation = () => {
         {errors.foodType && <span className="text-red-500">Food type is required</span>}
 
         <input
-          type="text"
-          placeholder="Quantity (e.g., 10kg, 50 portions)"
+          type="number"
+          placeholder="Quantity (e.g., 10 kg, 50 portions )"
           {...register('quantity', { required: true })}
           className="input input-bordered w-full"
         />
