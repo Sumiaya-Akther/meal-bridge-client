@@ -30,6 +30,7 @@
 - 🛒 **Request Donations**: Charities can request donations and confirm pickups
 - 📈 **Restaurant Stats Dashboard**: Visualize donation stats by food type and quantity using Recharts
 - 📝 **Charity Reviews**: Charities and users can leave reviews for restaurants and food donations
+- 📦 **Donation Lifecycle Management** — From restaurant listing → charity request → admin approval → pickup confirmation.
 - 🧾 **Transaction History**: Stripe payments are logged and displayed in user dashboards
 - 📂 **Admin Controls**: Admin can manage donations, users, role requests, and feature donations
 - ❤️ **Favorites System**: Users and charities can save donations to their favorites list
