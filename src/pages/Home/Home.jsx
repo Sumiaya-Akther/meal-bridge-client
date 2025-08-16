@@ -4,6 +4,7 @@ import FeaturedDonations from '../../component/FeaturedDonations/FeaturedDonatio
 import LatestCharityRequests from '../../component/LatestCharityRequests/LatestCharityRequests';
 import CommunityStories from '../../component/CommunityStories/CommunityStories';
 import ImpactStats from '../../component/ImpactStats/ImpactStats';
+import HowItWork from '../../component/HowItWork/HowItWork';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <LatestCharityRequests></LatestCharityRequests>
             <ImpactStats></ImpactStats>
             <CommunityStories></CommunityStories>
+            <HowItWork></HowItWork>
         </div>
     );
 };

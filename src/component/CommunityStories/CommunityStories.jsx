@@ -41,7 +41,7 @@ const CommunityStories = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-3">
         💬 Community Stories
       </h2>
-      <p className='text-center mb-12 text-gray-600 dark:text-gray-300'>
+      <p className='text-center mb-12'>
         Real voices, real impact — heartfelt stories from restaurants and charities in action.
       </p>
 

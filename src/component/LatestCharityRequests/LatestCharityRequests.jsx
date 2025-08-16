@@ -22,7 +22,7 @@ const LatestCharityRequests = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-3">
         Latest Charity Requests
       </h2>
-      <p className="text-center mb-12 text-gray-600">
+      <p className="text-center mb-12">
         See how local charities are reaching out for support — your surplus can be their lifeline.
       </p>
 
