@@ -34,6 +34,7 @@ import FeaturedDonations from "../component/FeaturedDonations/FeaturedDonations"
 import DonationStats from "../pages/Dashboard/Restaurant/DonationStats/DonationStats";
 import AboutUs from "../pages/About/AboutUs";
 import ContactUs from "../pages/Contact/ContactUs";
+import Support from "../pages/Support/Support";
 
 export const router = createBrowserRouter([
     {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
             {
               path:'/contact',
               Component:ContactUs
+            },
+            {
+              path:'/support',
+              Component:Support
             },
             {
                 path: 'donations/:id',

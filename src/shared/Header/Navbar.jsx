@@ -70,16 +70,26 @@ const Navbar = () => {
                                     About Us
                                 </NavLink>
                             </li>
-                               <li>
-                            <NavLink
-                                to="/contact"
-                                className={({ isActive }) =>
-                                    isActive ? "text-primary font-extrabold" : ""
-                                }
-                            >
-                                Contact Us
-                            </NavLink>
-                        </li>
+                            <li>
+                                <NavLink
+                                    to="/contact"
+                                    className={({ isActive }) =>
+                                        isActive ? "text-primary font-extrabold" : ""
+                                    }
+                                >
+                                    Contact Us
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/support"
+                                    className={({ isActive }) =>
+                                        isActive ? "text-primary font-extrabold" : ""
+                                    }
+                                >
+                                    Support
+                                </NavLink>
+                            </li>
                             <li>
                                 <NavLink
                                     to="/dashboard"
@@ -126,7 +136,7 @@ const Navbar = () => {
                                 About Us
                             </NavLink>
                         </li>
-                         <li>
+                        <li>
                             <NavLink
                                 to="/contact"
                                 className={({ isActive }) =>
@@ -134,6 +144,16 @@ const Navbar = () => {
                                 }
                             >
                                 Contact Us
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/support"
+                                className={({ isActive }) =>
+                                    isActive ? "text-primary font-extrabold" : ""
+                                }
+                            >
+                                Support
                             </NavLink>
                         </li>
                         <li>

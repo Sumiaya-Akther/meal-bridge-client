@@ -42,7 +42,7 @@ const Footer = () => {
             <li>🏠 <NavLink to="/" className={({ isActive }) => isActive ? activeClass : ""}>Home</NavLink></li>
             <li>🍱 <NavLink to="/allDonations" className={({ isActive }) => isActive ? activeClass : ""}>All Donations</NavLink></li>
             <li>📊 <NavLink to="/dashboard" className={({ isActive }) => isActive ? activeClass : ""}>Dashboard</NavLink></li>
-            <li>🔐 <NavLink to="/login" className={({ isActive }) => isActive ? activeClass : ""}>Login</NavLink></li>
+            <li>🔐 <NavLink to="/support" className={({ isActive }) => isActive ? activeClass : ""}>Support</NavLink></li>
           </ul>
         </div>
 
