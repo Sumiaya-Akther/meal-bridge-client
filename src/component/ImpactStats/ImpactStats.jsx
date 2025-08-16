@@ -1,6 +1,31 @@
 import React from 'react';
 import { FaLeaf, FaUtensils, FaRecycle } from 'react-icons/fa';
 import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
+
+const statsData = [
+  {
+    icon: <FaUtensils className="text-5xl text-secondary mx-auto mb-4" />,
+    count: 12500,
+    label: "Food Donated",
+    unit: "kg",
+    color: "text-secondary",
+  },
+  {
+    icon: <FaRecycle className="text-5xl text-info mx-auto mb-4" />,
+    count: 30000,
+    label: "Meals Served",
+    unit: "Meals",
+    color: "text-info",
+  },
+  {
+    icon: <FaLeaf className="text-5xl text-success mx-auto mb-4" />,
+    count: 18,
+    label: "CO₂ Reduced",
+    unit: "Tons",
+    color: "text-success",
+  },
+];
 
 const ImpactStats = () => {
   return (
@@ -9,34 +34,28 @@ const ImpactStats = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
           📊 Our Community Impact
         </h2>
-        <p className=' text-center mb-12'>Track how our collective actions are reducing waste, serving meals, and saving the planet.</p>
+        <p className="text-center mb-12">
+          Track how our collective actions are reducing waste, serving meals, and saving the planet.
+        </p>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="bg-base-100 rounded-2xl shadow p-6">
-            <FaUtensils className="text-5xl text-secondary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-700">
-              <CountUp end={12500} duration={30} separator="," />+ kg
-            </h3>
-            <p className="text-sm text-gray-500 mt-2">Food Donated</p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-base-100 rounded-2xl shadow p-6">
-            <FaRecycle className="text-5xl text-info mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-700">
-              <CountUp end={30000} duration={30} separator="," />+ Meals
-            </h3>
-            <p className="text-sm text-gray-500 mt-2">Meals Served</p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-base-100 rounded-2xl shadow p-6">
-            <FaLeaf className="text-5xl text-success mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-700">
-              <CountUp end={18} duration={30} /> Tons
-            </h3>
-            <p className="text-sm text-gray-500 mt-2">CO₂ Reduced</p>
-          </div>
+          {statsData.map((stat, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-base-100 rounded-2xl shadow-md p-6 border border-white flex flex-col items-center justify-center hover:shadow-xl cursor-pointer transition duration-300"
+              whileHover={{ scale: 1.05 }}
+              data-aos="fade-up"
+              data-aos-delay={idx * 150}
+            >
+              <div className={`p-2 rounded-full transition duration-300 hover:shadow-[0_0_20px_${stat.color}]`}>
+                {stat.icon}
+              </div>
+              <h3 className={`text-2xl font-bold text-primary mt-2`}>
+                <CountUp end={stat.count} duration={3} separator="," /> {stat.unit}
+              </h3>
+              <p className="text-sm text-secondary mt-2">{stat.label}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
