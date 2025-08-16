@@ -2,7 +2,7 @@ import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Typewriter } from 'react-simple-typewriter';
 import { Carousel } from 'react-responsive-carousel';
-import { Link } from 'react-router';  // react-router-dom use korte hobe normally
+import { Link } from 'react-router';
 
 const Banner = () => {
   return (
@@ -18,11 +18,11 @@ const Banner = () => {
     <div className='max-w-7xl mx-auto'>
         <div className="relative">
         <img
-          className="w-full h-[570px] object-cover rounded-2xl"
+          className="max-w-full h-[570px] md:h-[600px] lg:h-[650px] object-cover md:object-fill rounded-2xl"
           src="https://i.ibb.co/RTYJ71sT/banner-4.jpg"
           alt="Reduce Food Waste"
         />
-        <div className="absolute bottom-20 md:bottom-40 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4 bg-opacity-40 rounded-lg">
+        <div className="absolute bottom-20 md:bottom-50 lg:bottom-60 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4 bg-opacity-80 rounded-lg">
           <h1 className="text-3xl md:text-4xl font-bold">
             Reduce Food Waste, Save Our Planet
             <br />
@@ -57,11 +57,11 @@ const Banner = () => {
       {/* Slide 2 */}
       <div className="relative">
         <img
-          className="w-full h-[570px] object-cover rounded-2xl"
+          className="max-w-full h-[570px] md:h-[600px] lg:h-[650px] object-cover md:object-fill rounded-2xl"
           src="https://i.ibb.co/NdfJBtfL/banner1.jpg"
           alt="Community Sharing"
         />
-        <div className="absolute bottom-20 md:bottom-40 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4 bg-opacity-40 rounded-lg">
+        <div className="absolute bottom-20 md:bottom-50 lg:bottom-60 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4 bg-opacity-40 rounded-lg">
           <h1 className="text-3xl md:text-4xl font-bold">
             Join Our Community to Fight Food Waste
             <br />
@@ -95,11 +95,11 @@ const Banner = () => {
       {/* Slide 3 */}
       <div className="relative">
         <img
-          className="w-full h-[570px] object-cover rounded-2xl"
+          className="max-w-full h-[570px] md:h-[600px] lg:h-[650px] object-cover md:object-fill rounded-2xl"
           src="https://i.ibb.co/ksVKT7sL/banner2.jpg"
           alt="Save Food, Save Future"
         />
-        <div className="absolute bottom-20 md:bottom-40 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4 bg-opacity-40 rounded-lg">
+        <div className="absolute bottom-20 md:bottom-50 lg:bottom-60 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4 bg-opacity-40 rounded-lg">
           <h1 className="text-3xl md:text-4xl font-bold">
             Save Food, Save Future
             <br />
