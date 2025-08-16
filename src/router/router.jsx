@@ -35,6 +35,7 @@ import DonationStats from "../pages/Dashboard/Restaurant/DonationStats/DonationS
 import AboutUs from "../pages/About/AboutUs";
 import ContactUs from "../pages/Contact/ContactUs";
 import Support from "../pages/Support/Support";
+import Faq from "../pages/Faq/Faq";
 
 export const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
             {
               path:'/support',
               Component:Support
+            },
+            {
+              path:'/faq',
+              Component:Faq
             },
             {
                 path: 'donations/:id',

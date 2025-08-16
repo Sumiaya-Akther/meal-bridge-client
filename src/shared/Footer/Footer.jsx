@@ -52,7 +52,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li>📖 <NavLink to="/about-us" className={({ isActive }) => isActive ? activeClass : ""}>About Us</NavLink></li>
             <li>📞 <NavLink to="/contact" className={({ isActive }) => isActive ? activeClass : ""}>Contact</NavLink></li>
-            <li>❓ <NavLink to="/faqs" className={({ isActive }) => isActive ? activeClass : ""}>FAQs</NavLink></li>
+            <li>❓ <NavLink to="/faq" className={({ isActive }) => isActive ? activeClass : ""}>FAQs</NavLink></li>
             <li>🔒 <NavLink to="/privacy-policy" className={({ isActive }) => isActive ? activeClass : ""}>Privacy Policy</NavLink></li>
           </ul>
         </div>
