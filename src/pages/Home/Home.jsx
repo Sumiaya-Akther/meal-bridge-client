@@ -7,6 +7,7 @@ import ImpactStats from '../../component/ImpactStats/ImpactStats';
 import HowItWork from '../../component/HowItWork/HowItWork';
 import BecomeCharity from '../../component/BecomeCharity/BecomeCharity';
 import UpcomingEvents from '../../component/UpcomingEvents/UpcomingEvents';
+import LocationMap from '../../component/LocationMap/LocationMap';
 
 const Home = () => {
     return (
@@ -17,8 +18,8 @@ const Home = () => {
             <ImpactStats></ImpactStats>
             <CommunityStories></CommunityStories>
             <HowItWork></HowItWork>
-            <BecomeCharity></BecomeCharity>
             <UpcomingEvents></UpcomingEvents>
+            <BecomeCharity></BecomeCharity>
         </div>
     );
 };

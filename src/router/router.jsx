@@ -32,6 +32,7 @@ import CharityRoute from "./CharityRoute";
 import AdminRoute from "./AdminRoute";
 import FeaturedDonations from "../component/FeaturedDonations/FeaturedDonations";
 import DonationStats from "../pages/Dashboard/Restaurant/DonationStats/DonationStats";
+import AboutUs from "../pages/About/AboutUs";
 
 export const router = createBrowserRouter([
     {
@@ -45,9 +46,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'allDonations',
-                element: <PrivateRoute>
-                    <AllDonations></AllDonations>
-                </PrivateRoute>
+               Component:AllDonations
+            },
+            {
+              path:'/about-us',
+              Component:AboutUs
             },
             {
                 path: 'donations/:id',
