@@ -5,6 +5,7 @@ import LatestCharityRequests from '../../component/LatestCharityRequests/LatestC
 import CommunityStories from '../../component/CommunityStories/CommunityStories';
 import ImpactStats from '../../component/ImpactStats/ImpactStats';
 import HowItWork from '../../component/HowItWork/HowItWork';
+import BecomeCharity from '../../component/BecomeCharity/BecomeCharity';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <ImpactStats></ImpactStats>
             <CommunityStories></CommunityStories>
             <HowItWork></HowItWork>
+            <BecomeCharity></BecomeCharity>
         </div>
     );
 };
