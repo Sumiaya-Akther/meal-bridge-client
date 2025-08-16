@@ -90,16 +90,18 @@ const Navbar = () => {
                                     Support
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink
-                                    to="/dashboard"
-                                    className={({ isActive }) =>
-                                        isActive ? "text-primary font-extrabold" : ""
-                                    }
-                                >
-                                    Dashboard
-                                </NavLink>
-                            </li>
+                            {
+                                user ? <li>
+                                    <NavLink
+                                        to="/dashboard"
+                                        className={({ isActive }) =>
+                                            isActive ? "text-primary font-extrabold" : ""
+                                        }
+                                    >
+                                        Dashboard
+                                    </NavLink>
+                                </li> : <></>
+                            }
                         </ul>
                     </div>
                     <h1 className="flex font-bold items-center md:text-3xl"><img className='w-22' src={logo} alt="" /></h1>
@@ -156,16 +158,18 @@ const Navbar = () => {
                                 Support
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to="/dashboard"
-                                className={({ isActive }) =>
-                                    isActive ? "text-primary font-extrabold" : ""
-                                }
-                            >
-                                Dashboard
-                            </NavLink>
-                        </li>
+                        {
+                            user ? <li>
+                                <NavLink
+                                    to="/dashboard"
+                                    className={({ isActive }) =>
+                                        isActive ? "text-primary font-extrabold" : ""
+                                    }
+                                >
+                                    Dashboard
+                                </NavLink>
+                            </li> : <></>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">
