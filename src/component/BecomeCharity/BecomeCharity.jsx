@@ -24,7 +24,7 @@ const buttonVariants = {
 
 const BecomeCharity = () => (
     <motion.section
-        className="relative mt-20 mb-30 px-4 py-24 rounded-2xl overflow-hidden text-center
+        className=" max-w-7xl mx-auto relative mt-20 mb-30 px-4 py-24 rounded-2xl overflow-hidden text-center
                bg-gradient-to-r from-green-500 via-green-600 to-green-700 shadow-lg"
         variants={containerVariants}
         initial="hidden"
