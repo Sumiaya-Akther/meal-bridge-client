@@ -42,7 +42,7 @@ const ImpactStats = () => {
           {statsData.map((stat, idx) => (
             <motion.div
               key={idx}
-              className="bg-base-100 rounded-2xl shadow-md p-6 border border-white flex flex-col items-center justify-center hover:shadow-xl cursor-pointer transition duration-300"
+              className="bg-base-100 rounded-2xl shadow-md p-6 border border-gray-200 flex flex-col items-center justify-center hover:shadow-xl cursor-pointer transition duration-300"
               whileHover={{ scale: 1.05 }}
               data-aos="fade-up"
               data-aos-delay={idx * 150}
