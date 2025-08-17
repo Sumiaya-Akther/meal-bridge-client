@@ -37,6 +37,7 @@ import ContactUs from "../pages/Contact/ContactUs";
 import Support from "../pages/Support/Support";
 import Faq from "../pages/Faq/Faq";
 import ReportIssue from "../pages/ReportIssue/ReportIssue";
+import UpdateProfile from "../pages/Dashboard/MyProfile/UpdateProfile";
 
 export const router = createBrowserRouter([
     {
@@ -113,6 +114,10 @@ export const router = createBrowserRouter([
                 index: true,
                 path: '/dashboard',
                 Component: MyProfile
+            },
+            {
+              path:'update-profile',
+              Component: UpdateProfile
             },
             //user dashboard
             {
