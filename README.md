@@ -118,7 +118,7 @@ Charity requests require **Stripe payment** and Admin approval. Admins can manua
 - SweetAlert2 notifications for all actions.  
 - TanStack Query for data fetching and mutations.  
 - Optional Mapbox integration for donation locations.  
-- Optional Swiper.js slider for banners.
+- Optional react-responsive-carousel slider for banners.
 
 ---
 
